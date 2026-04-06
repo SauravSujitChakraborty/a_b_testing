@@ -92,12 +92,17 @@ The Problem: Linear models (Logistic Regression) suffer from high Structural Bia
 The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
 
 The Proof: The Challenger achieved a Brier Score (BS) of 0.0535, significantly lower than the Legacy model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
+$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$
 
-$$BS=1/N  ∑_(t=1)^N▒(f_t- o_t )^2$$
+
+$$
+BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
+$$
+
 
 The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
 $x_2$ (Signal): 0.6364
-$x_0, x_1$ (Interactions): \approx 0.15
+$x_0, x_1$ (Interactions): 0.15 (approx.)
 $x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
 
 	
