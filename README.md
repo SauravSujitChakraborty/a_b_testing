@@ -87,7 +87,7 @@ BS (The Brier Score)
 
 Additional Notes
 
-	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions $x_0 \cdot x_1$, leading to miscalibrated probabilities.
+	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions where           $x_0 \cdot x_1$, leading to miscalibrated probabilities.
 
 	The Solution: A Random Forest Ensemble that approximates the interaction via recursive partitioning.
 
@@ -118,7 +118,7 @@ In high-frequency trading (HFT), Alpha is not just about being "right"; it’s a
 
 
 
-### 2. Signal Calibration (The Brier Score Advantage)
+2. Signal Calibration (The Brier Score Advantage)
 
 In high-frequency trading (HFT), Alpha is not just about being "right"; it's about **Position Sizing**.
 
