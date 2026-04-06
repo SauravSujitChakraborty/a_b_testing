@@ -7,7 +7,7 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 
  Brier Score (0.0535 vs 0.0640)
 
-Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
+Interaction Detection: Logistic Regression assumes independent contributions from each variable $(x_0+x_1+x_2)$. The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
 
 Recursive Partitioning: The Random Forest uses decision trees that split on  $x_0$ and then  $x_1$. This creates a step-wise approximation of the multiplication.
 
