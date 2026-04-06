@@ -7,15 +7,16 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 
  Brier Score (0.0535 vs 0.0640)
 
-	Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
+Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
 
-	Recursive Partitioning: The Random Forest uses decision trees that split on  x_0 and then  x_1. This creates a step-wise approximation of the multiplication.
+Recursive Partitioning: The Random Forest uses decision trees that split on  x_0 and then  x_1. This creates a step-wise approximation of the multiplication.
 
-	The Interview Flex: "The Logistic Regression model has higher Bias because it cannot map the product term. The Random Forest reduces this Bias while maintaining low Variance through ensemble averaging."
+	
 
 The Theory of Signal Calibration (Brier Score)
-
-$BS=1/N  ∑_(t=1)^N▒(f_t- o_t )^2$
+$$
+BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
+$$
 
 BS (The Brier Score)
 
@@ -29,8 +30,10 @@ BS (The Brier Score)
 
 	We divide by N to get the Mean error. This ensures that a model tested on 100 trades can be compared fairly to a model tested on 1,000,000 trades.
 
-3. $∑_(t=1)^N$
 
+3.$$
+\sum_{t=1}^{N}
+$$
 (The Summation)
 
 	This is the sum from the first trade (t=1) to the last trade (N).
@@ -66,13 +69,13 @@ BS (The Brier Score)
 
 Additional Notes
 
-	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions (x_0 \cdot x_1), leading to miscalibrated probabilities.
+	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions ($x_0 \cdot x_1$), leading to miscalibrated probabilities.
 
 	The Solution: A Random Forest Ensemble that approximates the interaction via recursive partitioning.
 
 	The Proof: The Challenger achieved a Brier Score of 0.0535, significantly lower than the Legacy model's 0.0640, proving superior probability calibration.
 
-	The Alpha: Feature $x_2$ was correctly identified as the primary driver (0.63 importance), while noise features x_3 and x_4 were successfully suppressed.
+	The Alpha: Feature $x_2$ was correctly identified as the primary driver (0.63 importance), while noise features $x_3$ and $x_4$ were successfully suppressed.
 
 
 
