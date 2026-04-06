@@ -7,7 +7,7 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 
  Brier Score (0.0535 vs 0.0640)
 
-Interaction Detection: Logistic Regression assumes independent contributions from each variable $(x_0+x_1+x_2)$. The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
+Interaction Detection: Logistic Regression assumes independent contributions from each variable $(x_0+x_1+x_2)$. The expression which leads to Alpha is,  $x_0⋅ x_1$  + $x_2$.
 
 Recursive Partitioning: The Random Forest uses decision trees that split on  $x_0$ and then  $x_1$. This creates a step-wise approximation of the multiplication.
 
@@ -29,11 +29,9 @@ The Feature Importance Analysis distinguishes between "Market Regime" signals an
 Market Regime: $(x_0, x_1, x_2)$
 Random Walk: $(x_3, x_4)$
 
----
 
 > Note: This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
 
-	
 
 The Theory of Signal Calibration (Brier Score)
 $BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$
@@ -101,16 +99,10 @@ $$
 BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
 $$
 
-
 The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
 $x_2$ (Signal): 0.6364
 $x_0, x_1$ (Interactions): 0.15 (approx.)
 $x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
-
-	
-
-
-
 
 In modern markets, simple signals like "If Volume is high, Buy" are already priced out. Alpha now hides in contingent relationships.
 
@@ -136,7 +128,7 @@ In high-frequency trading (HFT), Alpha is not just about being "right"; it's abo
   
 •	The Code's Logic: Calculating the Brier Score 
 $$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
-$(f_t - o_t)^2$.
+
 
 •	The Alpha: If your model says "90% probability" but is only right 60% of the time, you will over-leverage and blow up.
 
