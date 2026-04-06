@@ -93,9 +93,7 @@ The Solution: A Random Forest Ensemble that approximates the non-linear interact
 
 The Proof: The Challenger achieved a Brier Score (BS) of 0.0535, significantly lower than the Legacy model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
 
-$$
-BS=1/N  ∑_(t=1)^N▒(f_t- o_t )^2 
-$$
+$$BS=1/N  ∑_(t=1)^N▒(f_t- o_t )^2$$
 
 The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
 $x_2$ (Signal): 0.6364
@@ -110,9 +108,7 @@ $x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
 In modern markets, simple signals like "If Volume is high, Buy" are already priced out. Alpha now hides in contingent relationships.
 
 •	The Code's Logic: 
-$$
-Y = x_0 \cdot x_1 + x_2
-$$
+$$Y = x_0 \cdot x_1 + x_2$$
 
 •	The Alpha: This represents a scenario where $x_0$ is only valuable if $x_1$ is also present (e.g., a specific Order Book Imbalance only matters if Volatility is above a certain threshold).
 
