@@ -87,7 +87,7 @@ BS (The Brier Score)
 
 Additional Notes
 
-	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions where           $$x_0 \cdot x_1$$, leading to miscalibrated probabilities.
+	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions where           $x_0 \cdot x_1$, leading to miscalibrated probabilities.
 
 	The Solution: A Random Forest Ensemble that approximates the interaction via recursive partitioning.
 
