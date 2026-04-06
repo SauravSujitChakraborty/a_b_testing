@@ -87,14 +87,22 @@ BS (The Brier Score)
 
 Additional Notes
 
-	The Problem: Linear models (Logistic Regression) fail to capture multiplicative feature interactions where           $x_0 \cdot x_1$, leading to miscalibrated probabilities.
+The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
 
-	The Solution: A Random Forest Ensemble that approximates the interaction via recursive partitioning.
+The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
 
-	The Proof: The Challenger achieved a Brier Score of 0.0535, significantly lower than the Legacy model's 0.0640, proving superior probability calibration.
+The Proof: The Challenger achieved a Brier Score (BS) of 0.0535, significantly lower than the Legacy model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
 
-	The Alpha: Feature $x_2$ was correctly identified as the primary driver (0.63 importance), while noise features $x_3$ and $x_4$ were successfully suppressed.
+$$
+BS=1/N  ∑_(t=1)^N▒(f_t- o_t )^2 
+$$
 
+The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
+$x_2$ (Signal): 0.6364
+$x_0, x_1$ (Interactions): \approx 0.15
+$x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
+
+	
 
 
 
