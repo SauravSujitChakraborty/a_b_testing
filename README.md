@@ -10,7 +10,28 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
 
 Recursive Partitioning: The Random Forest uses decision trees that split on  $x_0$ and then  $x_1$. This creates a step-wise approximation of the multiplication.
+### 1. The Problem
+Linear models (Logistic Regression) fail to capture multiplicative feature interactions, leading to miscalibrated probabilities:
+$$x_0 \cdot x_1$$
 
+### 2. The Code's Logic
+The model captures the relationship defined by:
+$$Y = x_0 \cdot x_1 + x_2$$
+
+### 3. Signal Calibration (The Brier Score Advantage)
+In high-frequency trading (HFT), Alpha is not just about being "right"; it's about **Position Sizing**. This code calculates the **Brier Score** to ensure probability estimates are mathematically calibrated:
+
+$$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
+
+### 4. Noise Filtering (Sharpening the Signal-to-Noise Ratio)
+The Feature Importance Analysis distinguishes between "Market Regime" signals and "Random Walk" noise:
+* **Market Regime:** $(x_0, x_1, x_2)$
+* **Random Walk:** $(x_3, x_4)$
+
+---
+
+> **Note:** This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
+> 
 	
 
 The Theory of Signal Calibration (Brier Score)
@@ -92,10 +113,17 @@ $$
 
 In high-frequency trading (HFT), Alpha is not just about being "right"; it’s about Position Sizing.
 
+  $$Y = x_0 \cdot x_1 + x_2$$
+
+
+
+### 2. Signal Calibration (The Brier Score Advantage)
+
+In high-frequency trading (HFT), Alpha is not just about being "right"; it's about **Position Sizing**.
+
+  
 •	The Code's Logic: Calculating the Brier Score 
-$$
-BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
-$$
+$$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
 $(f_t - o_t)^2$.
 
 •	The Alpha: If your model says "90% probability" but is only right 60% of the time, you will over-leverage and blow up.
