@@ -9,14 +9,12 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 
 Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
 
-Recursive Partitioning: The Random Forest uses decision trees that split on  x_0 and then  x_1. This creates a step-wise approximation of the multiplication.
+Recursive Partitioning: The Random Forest uses decision trees that split on  $x_0$ and then  $x_1$. This creates a step-wise approximation of the multiplication.
 
 	
 
 The Theory of Signal Calibration (Brier Score)
-$$
-BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
-$$
+$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$
 
 BS (The Brier Score)
 
@@ -31,9 +29,7 @@ BS (The Brier Score)
 	We divide by N to get the Mean error. This ensures that a model tested on 100 trades can be compared fairly to a model tested on 1,000,000 trades.
 
 
-3.$$
-\sum_{t=1}^{N}
-$$
+3.$\sum_{t=1}^{N}$
 (The Summation)
 
 	This is the sum from the first trade (t=1) to the last trade (N).
