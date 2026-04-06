@@ -10,28 +10,29 @@ Identifying "Hidden" Interactions (Non-Linear Alpha)
 Interaction Detection: Logistic Regression assumes independent contributions from each variable (x_0+ x_1 + x_2). The expression which leads to Alpha is ,  $x_0⋅ x_1$  + $x_2$.
 
 Recursive Partitioning: The Random Forest uses decision trees that split on  $x_0$ and then  $x_1$. This creates a step-wise approximation of the multiplication.
-### 1. The Problem
+
+ 1. The Problem
 Linear models (Logistic Regression) fail to capture multiplicative feature interactions, leading to miscalibrated probabilities:
 $$x_0 \cdot x_1$$
 
-### 2. The Code's Logic
+ 2. The Code's Logic
 The model captures the relationship defined by:
 $$Y = x_0 \cdot x_1 + x_2$$
 
-### 3. Signal Calibration (The Brier Score Advantage)
-In high-frequency trading (HFT), Alpha is not just about being "right"; it's about **Position Sizing**. This code calculates the **Brier Score** to ensure probability estimates are mathematically calibrated:
+ 3. Signal Calibration (The Brier Score Advantage)
+In high-frequency trading (HFT), Alpha is not just about being "right"; it's about **Position Sizing**. This code calculates the Brier Score to ensure probability estimates are mathematically calibrated:
 
 $$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
 
-### 4. Noise Filtering (Sharpening the Signal-to-Noise Ratio)
+ 4. Noise Filtering (Sharpening the Signal-to-Noise Ratio)
 The Feature Importance Analysis distinguishes between "Market Regime" signals and "Random Walk" noise:
-* **Market Regime:** $(x_0, x_1, x_2)$
-* **Random Walk:** $(x_3, x_4)$
+Market Regime: $(x_0, x_1, x_2)$
+Random Walk: $(x_3, x_4)$
 
 ---
 
-> **Note:** This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
-> 
+> Note: This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
+
 	
 
 The Theory of Signal Calibration (Brier Score)
@@ -39,9 +40,9 @@ $BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$
 
 BS (The Brier Score)
 
-	What it is: The "Calibration Metric."
+1. The "Calibration Metric"
 
-	The Quant Logic: It measures the accuracy of your probabilistic predictions. A score of 0 is a perfect "God-mode" model, while 1 is a model that is confidently wrong every single time.
+   It measures the accuracy of your probabilistic predictions. A score of 0 is a perfect "God-mode" model, while 1 is a model that is confidently wrong every single time.
 
 2. $1/N$  (The Averaging Term)
 
