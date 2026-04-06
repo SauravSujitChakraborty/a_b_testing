@@ -51,7 +51,8 @@ BS (The Brier Score)
 	We divide by N to get the Mean error. This ensures that a model tested on 100 trades can be compared fairly to a model tested on 1,000,000 trades.
 
 
-3.$\sum_{t=1}^{N}$
+3.$\frac{1}{N} \sum_{t=1}^{N}$
+
 (The Summation)
 
 	This is the sum from the first trade (t=1) to the last trade (N).
