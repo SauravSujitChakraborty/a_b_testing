@@ -109,9 +109,9 @@ $$
 
 4.The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
 
-i)$x_2$ (Signal): 0.6364
-ii)$x_0, x_1$ (Interactions): 0.15 (approx.)
-iii)$x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
+i) $x_2$ (Signal): 0.6364
+ii) $x_0, x_1$ (Interactions): 0.15 (approx.)
+iii) $x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
 
 In modern markets, simple signals like "If Volume is high, Buy" are already priced out. Alpha now hides in contingent relationships.
 
