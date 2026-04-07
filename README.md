@@ -99,6 +99,7 @@ vi) $(f_t-o_t )^2$
 1.The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
 
 2.The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
+Logistic Regression suffers from Structural Bias in this context because it assumes an additive relationship $(x_0 + x_1)$. By contrast, the Random Forest captures the Conditional Alpha—where signal $x_0$ is only valid if $x_1$ exceeds a threshold—mirroring real-world market regimes.
 
 3.The Proof: The Random Forest achieved a Brier Score (BS) of 0.0535, significantly lower than the Linear Regression model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
 
