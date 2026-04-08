@@ -1,4 +1,4 @@
-# a_b_testing
+# a_b_testing 
 => An A/B Testing Python Programme Using Logistics Regression vs Random Forest Non-Linear Alpha Extraction &amp; Probability Calibration
 
 => This project was originally developed in Dec 2025 and is being published now as part of a curated Top 6 Quant Portfolio to demonstrate foundational concepts in signal interaction and probability calibration.
