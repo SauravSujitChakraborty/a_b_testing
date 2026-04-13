@@ -32,7 +32,7 @@ $$Y = x_0 \cdot x_1 + x_2$$
 
 6. Signal Calibration (The Brier Score Advantage)
    
-==>In high-frequency trading (HFT), Alpha is also about 'position sizing'. This code calculates the Brier Score to ensure probability estimates are mathematically calibrated:
+==> In high-frequency trading (HFT), Alpha is also about 'position sizing'. This code calculates the Brier Score to ensure probability estimates are mathematically calibrated:
 
 $$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
 
@@ -40,15 +40,15 @@ $$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
 
 ==> The Feature Importance Analysis distinguishes between 'Market Regime' signals and 'Random Walk' noise:
 
-i)Market Regime: $(x_0, x_1, x_2)$
+i) Market Regime: $(x_0, x_1, x_2)$
 
-ii)Random Walk: $(x_3, x_4)$
+ii) Random Walk: $(x_3, x_4)$
 
 ==> Inclusion of $x_3$ and $x_4$ as pure noise.
 
 iii) The Alpha: The Feature Importance Analysis in my code proves the model can distinguish between 'Market Regime' $(x_0, x_1, x_2)$ and 'Random Walk' $(x_3, x_4)$. The Alpha is often covered by 95% market noise.
 
-iv)Advantages: It prevents us from 'trading the noise'. Generating Alpha is as much about not losing money on bad signals as it is about winning on good ones.
+iv) Advantages: It prevents us from 'trading the noise'. Generating Alpha is as much about not losing money on bad signals as it is about winning on good ones.
 
 ==> Note: This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
 
@@ -104,18 +104,18 @@ vi) $(f_t-o_t )^2$
 
 9. Additional Notes
 
-I.The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
+I. The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
 
-II.The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
+II. The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
 Logistic Regression suffers from Structural Bias in this context because it assumes an additive relationship $(x_0 + x_1)$. By contrast,the Random Forest captures the Conditional Alpha—where signal $x_0$ is only valid if $x_1$ exceeds a threshold—mirroring real-world market regimes.
 
-III.The Proof: The Random Forest achieved a Brier Score (BS) of 0.0535, significantly lower than the Linear Regression model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
+III. The Proof: The Random Forest achieved a Brier Score (BS) of 0.0535, significantly lower than the Linear Regression model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
 
 $$
 BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2
 $$
 
-IV.The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
+IV. The Alpha: Feature importance analysis (Gini Impurity) confirmed that $x_2$ was correctly identified as the primary driver:
 
 i) $x_2$ (Signal): 0.6364
 ii) $x_0, x_1$ (Interactions): 0.15 (approx.)
