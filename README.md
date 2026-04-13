@@ -133,4 +133,9 @@ This project requires the following Python libraries for data processing and sta
 
 ==> Matplotlib/Seaborn: Visualizing distribution overlaps and confidence intervals.
 
+Installation
+
+pip install pandas numpy scikit-learn
+
+
 
