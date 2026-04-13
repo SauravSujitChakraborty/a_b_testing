@@ -135,7 +135,10 @@ This project requires the following Python libraries for data processing and sta
 
 Installation
 
+```bash
 pip install pandas numpy scikit-learn
+```
+
 
 
 
