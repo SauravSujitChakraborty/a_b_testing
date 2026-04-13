@@ -94,7 +94,7 @@ vi) $(f_t-o_t )^2$
 
 	Positivity: Squaring ensures that errors don't cancel each other out (e.g., a +0.2 error and a -0.2 error don't sum to zero).
 
-=> Additional Notes
+9. Additional Notes
 
 1.The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
 
@@ -115,11 +115,11 @@ iii) $x_3, x_4$ (Noise): < 0.03 (Successfully suppressed)
 
 In modern markets, simple signals like "If Volume is high, Buy" are already priced out. Alpha now hides in contingent relationships.
 
-Conclusion
+10. Conclusion
 
 This framework generates Alpha by moving beyond first-order linear effects. It successfully extracts Conditional Alpha (the interaction of $x_0$ and $x_1$) while utilizing the Brier Score to ensure our probability estimates are mathematically calibrated. This allows for superior risk-adjusted position sizing compared to a traditional linear estimator.
 
-9. Packages Required
+11. Packages Required
 
 This project requires the following Python libraries for data processing and statistical inference:
 
@@ -133,7 +133,7 @@ This project requires the following Python libraries for data processing and sta
 
 ==> Matplotlib/Seaborn: Visualizing distribution overlaps and confidence intervals.
 
-10. Installation
+12. Installation
 
 ```bash
 pip install pandas numpy scikit-learn
