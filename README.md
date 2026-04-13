@@ -119,7 +119,7 @@ Conclusion
 
 This framework generates Alpha by moving beyond first-order linear effects. It successfully extracts Conditional Alpha (the interaction of $x_0$ and $x_1$) while utilizing the Brier Score to ensure our probability estimates are mathematically calibrated. This allows for superior risk-adjusted position sizing compared to a traditional linear estimator.
 
- Packages Required
+9. Packages Required
 
 This project requires the following Python libraries for data processing and statistical inference:
 
@@ -133,7 +133,7 @@ This project requires the following Python libraries for data processing and sta
 
 ==> Matplotlib/Seaborn: Visualizing distribution overlaps and confidence intervals.
 
-Installation
+10. Installation
 
 ```bash
 pip install pandas numpy scikit-learn
