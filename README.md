@@ -48,7 +48,7 @@ ii)Random Walk: $(x_3, x_4)$
 
 iii) The Alpha: The Feature Importance Analysis in my code proves the model can distinguish between 'Market Regime' $(x_0, x_1, x_2)$ and 'Random Walk' $(x_3, x_4)$. The Alpha is often covered by 95% market noise.
 
-iv)Advantages: It prevents you from "trading the noise." Generating Alpha is as much about not losing money on bad signals as it is about winning on good ones.
+iv)Advantages: It prevents us from 'trading the noise'. Generating Alpha is as much about not losing money on bad signals as it is about winning on good ones.
 
 ==> Note: This framework allows for superior risk-adjusted position sizing compared to a traditional linear estimator by moving beyond first-order linear effects.
 
@@ -59,9 +59,9 @@ $BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$
 
 i) BS (The Brier Score)
 
-  ==> The "Calibration Metric"
+  ==> The 'Calibration Metric'
 
-     => It measures the accuracy of your probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a  model that is confidently wrong every single time.
+     => It measures the accuracy of our probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a  model that is confidently wrong every single time.
 
 ii) $1/N$  (The Averaging Term)
 
@@ -86,9 +86,9 @@ v) $o_t$ (The Outcome / Ground Truth)
 
   ==> The actual result of the trade.  There are two possible outcomes :-
 
-  ==> 1 if the event happened (Price hit target).
+    => 1 if the event happened (Price hit target).
 
-  ==> 0 if the event did not happen.
+    => 0 if the event did not happen.
 
   ==> Note: This is the binary reality of the market.
 
