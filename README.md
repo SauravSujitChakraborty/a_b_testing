@@ -5,7 +5,7 @@
 
 => THIS SECTION CONTAINS ALL THEORY BEHIND THIS PROJECT 
 
-=> Identifying "Hidden" Interactions (Non-Linear Alpha)
+=> Identifying 'Hidden' Interactions (Non-Linear Alpha)
 
 1. Brier Score (0.0535 vs 0.0640)
 
@@ -27,18 +27,18 @@ $$Y = x_0 \cdot x_1 + x_2$$
 
 4. The Alpha: This represents a scenario where $x_0$ is only valuable if $x_1$ is also present (e.g., a specific Order Book Imbalance only matters if Volatility is above a certain threshold).
 
-5. Advantage : By using the Random Forest, the code captures this "Multiplicative Alpha" that a standard Linear Regression would completely ignore or "average out" as noise.
+5. Advantage : By using the Random Forest, the code captures this 'Multiplicative Alpha' that a standard Linear Regression would completely ignore or 'average out' as noise.
 
 
 6. Signal Calibration (The Brier Score Advantage)
    
-==>In high-frequency trading (HFT), Alpha is also about "position sizing". This code calculates the Brier Score to ensure probability estimates are mathematically calibrated:
+==>In high-frequency trading (HFT), Alpha is also about 'position sizing'. This code calculates the Brier Score to ensure probability estimates are mathematically calibrated:
 
 $$BS = \frac{1}{N} \sum_{t=1}^{N} (f_t - o_t)^2$$
 
 7. Noise Filtering (Sharpening the Signal-to-Noise Ratio)
 
-==> The Feature Importance Analysis distinguishes between "Market Regime" signals and "Random Walk" noise:
+==> The Feature Importance Analysis distinguishes between 'Market Regime' signals and 'Random Walk' noise:
 
 i)Market Regime: $(x_0, x_1, x_2)$
 
@@ -46,7 +46,7 @@ ii)Random Walk: $(x_3, x_4)$
 
 ==> Inclusion of $x_3$ and $x_4$ as pure noise.
 
-iii) The Alpha: The Feature Importance Analysis in your code proves the model can distinguish between "Market Regime" $(x_0, x_1, x_2)$ and "Random Walk" $(x_3, x_4)$. The Alpha is often covered by 95% market noise.
+iii) The Alpha: The Feature Importance Analysis in my code proves the model can distinguish between 'Market Regime' $(x_0, x_1, x_2)$ and 'Random Walk' $(x_3, x_4)$. The Alpha is often covered by 95% market noise.
 
 iv)Advantages: It prevents you from "trading the noise." Generating Alpha is as much about not losing money on bad signals as it is about winning on good ones.
 
@@ -61,7 +61,7 @@ i) BS (The Brier Score)
 
   ==> The "Calibration Metric"
 
-     => It measures the accuracy of your probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a      model that is confidently wrong every single time.
+     => It measures the accuracy of your probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a  model that is confidently wrong every single time.
 
 ii) $1/N$  (The Averaging Term)
 
@@ -76,11 +76,11 @@ iii) $$\frac{1}{N} \sum_{t=1}^{N}$$ (The Summation)
 
   ==> This aggregates the individual errors across the entire backtest period. We use this because we need to know about the model's total performance over a specific time horizon.
 
-iv) $f_t$   (The Predicted Probability)
+iv) $f_t$ (The Predicted Probability)
 
   ==> This is the probability output from the model (e.g., 0.85 or 85%).
 
-  ==> For $f_t=0.9$, the model  says that there is a 90% chance this trade hits the profit target.
+  ==> For $f_t=0.9$, the model says that there is a 90% chance this trade hits the profit target.
 
 v) $o_t$ (The Outcome / Ground Truth)
 
@@ -107,7 +107,7 @@ vi) $(f_t-o_t )^2$
 I.The Problem: Linear models (Logistic Regression) suffer from high Structural Bias. They fail to capture multiplicative feature interactions, specifically the term $x_0 \cdot x_1$, leading to miscalibrated probabilities and sub-optimal risk pricing.
 
 II.The Solution: A Random Forest Ensemble that approximates the non-linear interaction via recursive partitioning. By splitting the feature space hierarchically, the ensemble can map the conditional relationship between $x_0$ and $x_1$.
-Logistic Regression suffers from Structural Bias in this context because it assumes an additive relationship $(x_0 + x_1)$. By contrast, the Random Forest captures the Conditional Alpha—where signal $x_0$ is only valid if $x_1$ exceeds a threshold—mirroring real-world market regimes.
+Logistic Regression suffers from Structural Bias in this context because it assumes an additive relationship $(x_0 + x_1)$. By contrast,the Random Forest captures the Conditional Alpha—where signal $x_0$ is only valid if $x_1$ exceeds a threshold—mirroring real-world market regimes.
 
 III.The Proof: The Random Forest achieved a Brier Score (BS) of 0.0535, significantly lower than the Linear Regression model's 0.0640. This reduction in quadratic loss proves superior probability calibration, essential for Kelly Criterion-based position sizing.
 
