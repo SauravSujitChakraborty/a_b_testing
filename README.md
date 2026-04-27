@@ -146,13 +146,13 @@ In modern markets, simple signals like "If Volume is high, Buy" are already pric
 ==> Cloning the repository:
 
 ```bash
-git clone [https://github.com/SauravSujitChakraborty/a_b_testing.git](https://github.com/SauravSujitChakraborty/a_b_testing.git)
+git clone https://github.com/SauravSujitChakraborty/a_b_testing.git
 ```
 
 ==> Installing the dependencies 
 
 ```bash
-pip install pandas numpy scikit-learn
+pip install -r requirements.txt.
 ```
 
 
