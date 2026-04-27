@@ -61,7 +61,7 @@ i) BS (The Brier Score)
 
   ==> The 'Calibration Metric'
 
-     => It measures the accuracy of our probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a  model that is confidently wrong every single time.
+   => It measures the accuracy of our probabilistic predictions. A score of 0 is a perfect ideal model, while 1 is a  model that is confidently wrong every single time.
 
 ii) $1/N$  (The Averaging Term)
 
@@ -86,9 +86,9 @@ v) $o_t$ (The Outcome / Ground Truth)
 
   ==> The actual result of the trade.  There are two possible outcomes :-
 
-    => 1 if the event happened (Price hit target).
+   => 1 if the event happened (Price hit target).
 
-    => 0 if the event did not happen.
+   => 0 if the event did not happen.
 
   ==> Note: This is the binary reality of the market.
 
@@ -96,11 +96,11 @@ vi) $(f_t-o_t )^2$
 
  ==> (The Squared Error)
 
-	=> The difference between hypothetical and real value squared.
+  => The difference between hypothetical and real value squared.
 
-	=> Squaring ensures that being "confidently wrong" (predicting 0.9 when the outcome is 0) is punished much more heavily than being "unsure" (predicting 0.5). 
+  => Squaring ensures that being "confidently wrong" (predicting 0.9 when the outcome is 0) is punished much more heavily than being "unsure" (predicting 0.5). 
 
-	=> Positivity: Squaring ensures that errors don't cancel each other out (e.g., a +0.2 error and a -0.2 error don't sum to zero).
+  => Positivity: Squaring ensures that errors don't cancel each other out (e.g., a +0.2 error and a -0.2 error don't sum to zero).
 
 9. Additional Notes
 
@@ -131,15 +131,15 @@ In modern markets, simple signals like "If Volume is high, Buy" are already pric
 
 ==> This project requires the following Python libraries for data processing and statistical inference:
 
-   => Pandas: Data structuring and conversion rate calculation.
+ => Pandas: Data structuring and conversion rate calculation.
 
-   => NumPy: Vectorized mathematical operations.
+ => NumPy: Vectorized mathematical operations.
 
-   => SciPy: Statistical distribution functions and p-value derivation.  
+ => SciPy: Statistical distribution functions and p-value derivation.  
 
-   => Statsmodels: Statistical power analysis and proportion testing.  
+ => Statsmodels: Statistical power analysis and proportion testing.  
 
-   => Matplotlib/Seaborn: Visualizing distribution overlaps and confidence intervals.
+ => Matplotlib/Seaborn: Visualizing distribution overlaps and confidence intervals.
 
 12. Installation
 
