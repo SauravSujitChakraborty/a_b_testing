@@ -149,7 +149,7 @@ In modern markets, simple signals like "If Volume is high, Buy" are already pric
 git clone https://github.com/SauravSujitChakraborty/a_b_testing.git && cd a_b_testing
 ```
 
-==> Create and activate environment
+==> Create and activate environment:
 
 ```bash
 python -m venv venv
@@ -158,12 +158,12 @@ source venv/bin/activate
 # On Windows:
 venv\Scripts\activate
 ```
-==> Installing the dependencies 
+==> Installing the dependencies:
 
 ```bash
 pip install -r requirements.txt.
 ```
-==> Running the Summarizer:
+==> Running the A/B Testing Analysis:
 
 ```bash
 python a_b_test_alpha_extract_prob.py
