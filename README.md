@@ -3,7 +3,7 @@
 
 => This project was originally developed by me in 2025, preserved and was being published in Apr 6,'26 as part of a curated Top 6 Quant Portfolio to demonstrate foundational concepts in signal interaction and probability calibration.
 
-=> THIS SECTION CONTAINS ALL THEORY BEHIND THIS PROJECT 
+=> THIS SECTION CONTAINS ALL THEORY BEHIND THIS PROJECT  
 
 => Identifying 'Hidden' Interactions (Non-Linear Alpha)
 
